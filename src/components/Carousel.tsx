@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import Button from "./Button";
 import Image from "next/image";
 
@@ -11,16 +12,19 @@ const ITEMS = [
         id: 0,
         title: "Gifts & Fun Stuff",
         description: "Personalized artwork and printed pieces that make awesome gifts for friends, family and teachers.",
+        image: "/b1.png",
     },
     {
         id: 1,
         title: "Business Projects",
         description: "Logos, display artwork, simple signage and branded pieces to help your business stand out.",
+        image: "/b2.png",
     },
     {
         id: 2,
         title: "Special Projects",
         description: "Need something unique for a presentation/event? We can help you design and print with our professional print partners.",
+        image: "/b3.png",
     },
 ];
 
@@ -71,7 +75,7 @@ export default function Carousel() {
     };
 
     return (
-        <div className="relative w-full max-w-7xl mx-auto py-12 px-4 flex flex-col items-center">
+        <div className="relative w-full max-w-7xl mx-auto pb-12 px-4 flex flex-col items-center">
             {/* Container need height for Absolute items */}
             <div className="relative w-full h-[600px] flex justify-center items-center overflow-visible">
 
@@ -101,8 +105,13 @@ export default function Carousel() {
                             style={getCardStyle(index)}
                         >
                             {/* Image Area */}
-                            <div className="w-full h-48 bg-white/40 rounded-lg mb-6 flex items-center justify-center text-5xl">
-                                {index === 0 ? "🎁" : index === 1 ? "💼" : "✨"}
+                            <div className="w-full h-48 bg-white/40 rounded-lg mb-6 flex items-center justify-center overflow-hidden relative">
+                                <Image
+                                    src={item.image}
+                                    alt={item.title}
+                                    fill
+                                    className="object-cover"
+                                />
                             </div>
 
                             <h3 className="font-heading text-3xl mb-4 text-black">{item.title}</h3>
@@ -115,7 +124,9 @@ export default function Carousel() {
             </div>
 
             <div className="mt-8">
-                <Button text="See My Works" color="#F3D576" className="px-8 py-3 text-xl" />
+                <Link href="/my-work">
+                    <Button text="See My Works" color="#F3D576" className="px-8 py-3 text-xl" />
+                </Link>
             </div>
         </div>
     );

@@ -10,9 +10,6 @@ html {
 
 body {
   font-family: var(--font-raleway), sans-serif;
-  background-image: url('../../public/bg.png');
-  background-size: cover;
-  background-repeat: no-repeat;
   overflow-x: hidden;
 }
 

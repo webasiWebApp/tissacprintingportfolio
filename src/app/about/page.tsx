@@ -2,9 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import ImageGallery from "react-image-gallery";
-// Import css for the gallery
-import "react-image-gallery/styles/css/image-gallery.css";
+import Gallery from "@/components/Gallery";
 
 // Skills Data
 const skills = [
@@ -17,24 +15,32 @@ const skills = [
 // Gallery Images (Placeholders)
 const images = [
     {
-        original: "https://picsum.photos/id/1018/1000/600/",
-        thumbnail: "https://picsum.photos/id/1018/250/150/",
+        original: "/gallary/p1.webp",
+        thumbnail: "/gallary/p1.webp",
     },
     {
-        original: "https://picsum.photos/id/1015/1000/600/",
-        thumbnail: "https://picsum.photos/id/1015/250/150/",
+        original: "/gallary/p2.webp",
+        thumbnail: "/gallary/p2.webp",
     },
     {
-        original: "https://picsum.photos/id/1019/1000/600/",
-        thumbnail: "https://picsum.photos/id/1019/250/150/",
+        original: "/gallary/p15.webp",
+        thumbnail: "/gallary/p15.webp",
     },
     {
-        original: "https://picsum.photos/id/1016/1000/600/",
-        thumbnail: "https://picsum.photos/id/1016/250/150/",
+        original: "/gallary/p4.jpeg",
+        thumbnail: "/gallary/p4.jpeg",
     },
     {
-        original: "https://picsum.photos/id/1013/1000/600/",
-        thumbnail: "https://picsum.photos/id/1013/250/150/",
+        original: "/gallary/p11.webp",
+        thumbnail: "/gallary/p11.webp",
+    },
+    {
+        original: "/gallary/p26.webp",
+        thumbnail: "/gallary/p26.webp",
+    },
+    {
+        original: "/gallary/p28.webp",
+        thumbnail: "/gallary/p28.webp",
     },
 ];
 
@@ -115,15 +121,8 @@ export default function AboutPage() {
                     <p className="font-sans text-gray-600 mt-4">A glimpse into my creative world</p>
                 </div>
 
-                <div className="gallery-wrapper rounded-xl overflow-hidden shadow-lg border-4 border-white">
-                    <ImageGallery
-                        items={images}
-                        showPlayButton={false}
-                        showFullscreenButton={true}
-                        autoPlay={true}
-                        slideInterval={4000}
-                        additionalClass="custom-gallery"
-                    />
+                <div className="gallery-wrapper rounded-xl overflow-hidden">
+                    <Gallery items={images} />
                 </div>
             </section>
         </main>

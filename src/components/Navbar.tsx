@@ -42,10 +42,12 @@ export default function Navbar() {
             {/* Right: Desktop Button & Mobile Hamburger */}
             <div className="flex items-center gap-4">
                 {/* Desktop CTA Button */}
-                <Button
-                    text="Get a Quote"
-                    className="hidden md:block text-lg px-6 py-2"
-                />
+                <Link href="/contact">
+                    <Button
+                        text="Get a Quote"
+                        className="hidden md:block text-lg px-6 py-2"
+                    />
+                </Link>
 
                 {/* Mobile Hamburger */}
                 <button
@@ -97,10 +99,12 @@ export default function Navbar() {
                                 {link.name}
                             </Link>
                         ))}
-                        <Button
-                            text="Get a Quote"
-                            className="text-xl px-6 py-3 w-full mt-4"
-                        />
+                        <Link href="/contact">
+                            <Button
+                                text="Get a Quote"
+                                className="text-xl px-6 py-3 w-full mt-4"
+                            />
+                        </Link>
                     </div>
                 </div>
             </div>

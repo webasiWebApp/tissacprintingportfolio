@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Instrument_Serif, Raleway } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -29,8 +30,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${instrumentSerif.variable} ${raleway.variable} antialiased`}
+        className={`${instrumentSerif.variable} ${raleway.variable} antialiased relative`}
       >
+        <div className="absolute inset-0 -z-10 w-full h-full">
+          <Image
+            src="/bg.webp"
+            alt="Background"
+            fill
+            quality={100}
+            priority
+            className="object-cover"
+          />
+        </div>
         <Navbar />
         {children}
         <Footer />

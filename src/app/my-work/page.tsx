@@ -1,56 +1,109 @@
 "use client";
 
-import { Gallery } from "react-grid-gallery";
+import PhotoAlbum from "react-photo-album";
+import "react-photo-album/styles.css";
 
 const images = [
     {
-        src: "https://picsum.photos/id/1018/1000/600/",
-        width: 320,
-        height: 174,
+        src: "/gallary/p29.webp",
+        width: 3024,
+        height: 4032,
         caption: "3D Printed Vase",
     },
     {
-        src: "https://picsum.photos/id/1015/1000/600/",
-        width: 320,
-        height: 174,
-        caption: "Custom Keychains",
+        src: "/gallary/p5.webp",
+        width: 3024,
+        height: 4032,
+        caption: "3D Printed Vase",
     },
     {
-        src: "https://picsum.photos/id/1019/1000/600/",
-        width: 320,
-        height: 174,
-        caption: "Business Display",
+        src: "/gallary/p6.webp",
+        width: 4284,
+        height: 5712,
+        caption: "3D Printed Vase",
     },
     {
-        src: "https://picsum.photos/id/1016/1000/600/",
-        width: 320,
-        height: 174,
-        caption: "Artistic Sculpture",
+        src: "/gallary/p7.webp",
+        width: 3024,
+        height: 4032,
+        caption: "3D Printed Vase",
     },
     {
-        src: "https://picsum.photos/id/1013/1000/600/",
-        width: 320,
-        height: 174,
-        caption: "Prototype Model",
+        src: "/gallary/p12.webp",
+        width: 4284,
+        height: 5712,
+        caption: "3D Printed Vase",
+    },{
+        src: "/gallary/p9.webp",
+        width: 4284,
+        height: 5712,
+        caption: "3D Printed Vase",
+    },{
+        src: "/gallary/p10.webp",
+        width: 4284,
+        height: 5712,
+        caption: "3D Printed Vase",
+    }
+    ,{
+        src: "/gallary/p12.webp",
+        width: 3024,
+        height: 4032,
+        caption: "3D Printed Vase",
+    },{
+        src: "/gallary/p13.webp",
+        width: 2318,
+        height: 3090,
+        caption: "3D Printed Vase",
+    }
+    ,{
+        src: "/gallary/p14.webp",
+        width: 3024,
+        height: 4032,
+        caption: "3D Printed Vase",
+    },{
+        src: "/gallary/p16.webp",
+       width: 4284,
+        height: 5712,
+        caption: "3D Printed Vase",
+    }
+    ,{
+        src: "/gallary/p20.webp",
+       width: 4284,
+        height: 5712,
+        caption: "3D Printed Vase",
     },
     {
-        src: "https://picsum.photos/id/1012/1000/600/",
-        width: 320,
-        height: 174,
-        caption: "School Project",
+        src: "/gallary/p23.webp",
+        width: 3024,
+        height: 4032,
+        caption: "3D Printed Vase",
     },
     {
-        src: "https://picsum.photos/id/1011/1000/600/",
-        width: 320,
-        height: 174,
-        caption: "Gift Item",
+        src: "/gallary/p24.webp",
+         width: 3024,
+        height: 4032,
+        caption: "3D Printed Vase",
     },
     {
-        src: "https://picsum.photos/id/1010/1000/600/",
-        width: 320,
-        height: 174,
-        caption: "Custom Toy",
+        src: "/gallary/p25.webp",
+         width: 3024,
+        height: 4032,
+        caption: "3D Printed Vase",
     },
+    {
+        src: "/gallary/p27.webp",
+         width: 3024,
+        height: 4032,
+        caption: "3D Printed Vase",
+    },
+    {
+        src: "/gallary/p28.webp",
+         width: 3024,
+        height: 4032,
+        caption: "3D Printed Vase",
+    },
+    
+   
 ];
 
 export default function MyWorkPage() {
@@ -68,8 +121,8 @@ export default function MyWorkPage() {
                 </div>
 
                 {/* Gallery Section */}
-                <div className="w-full">
-                    <Gallery images={images} enableImageSelection={false} />
+                <div className="w-full bg-black p-12 rounded-lg">
+                    <PhotoAlbum layout="rows" photos={images} />
                 </div>
             </div>
         </main>

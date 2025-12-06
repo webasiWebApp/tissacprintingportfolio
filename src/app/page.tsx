@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Button from "@/components/Button";
 import Carousel from "@/components/Carousel";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
         {/* Logo Image */}
         <div className="relative w-64 h-64 md:w-80 md:h-80 mb-6">
           <Image
-            src="/logo.png"
+            src="/logo.gif"
             alt="Tissac's Terrific Printing"
             fill
             className="object-contain"
@@ -36,21 +37,25 @@ export default function Home() {
 
         {/* Buttons */}
         <div className="flex flex-col md:flex-row gap-6 w-full md:w-auto">
-          <Button
-            text="Get in Touch"
-            color="#F3D576" // Yellow
-            className="px-8 py-3 text-xl w-full md:w-auto min-w-[180px]"
-          />
-          <Button
-            text="See My Works"
-            color="#A8C8C6" // Matching the background teal roughly, or slightly lighter
-            className="px-8 py-3 text-xl w-full md:w-auto min-w-[180px]"
-          />
+          <Link href="/contact" className="w-full md:w-auto">
+            <Button
+              text="Get in Touch"
+              color="#F3D576" // Yellow
+              className="px-8 py-3 text-xl w-full min-w-[180px]"
+            />
+          </Link>
+          <Link href="/my-work" className="w-full md:w-auto">
+            <Button
+              text="See My Works"
+              color="#A8C8C6" // Matching the background teal roughly, or slightly lighter
+              className="px-8 py-3 text-xl w-full min-w-[180px]"
+            />
+          </Link>
         </div>
       </div>
 
       {/* About Section */}
-      <section className="w-full max-w-6xl mx-auto mt-24 px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-left">
+      <section className="w-full max-w-6xl mx-auto mt-24 py-6 md:py-20 px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-left">
         {/* Left: Image */}
         <div className="relative w-full aspect-[4/5] md:aspect-square">
           <Image
@@ -78,11 +83,13 @@ export default function Home() {
           </h2>
 
           <div className="mt-4">
-            <Button
-              text="More About Tissac"
-              color="#F3D576"
-              className="px-8 py-3 text-lg font-medium"
-            />
+            <Link href="/about">
+              <Button
+                text="More About Tissac"
+                color="#F3D576"
+                className="px-8 py-3 text-lg font-medium"
+              />
+            </Link>
           </div>
         </div>
       </section>
@@ -98,7 +105,7 @@ export default function Home() {
           <h2 className="font-heading text-5xl md:text-7xl mb-4">
             What We Can <span className="text-[#F3D576]">Help</span> You Print
           </h2>
-          <p className="font-sans text-gray-700 max-w-2xl mx-auto mb-12">
+          <p className="font-sans text-gray-700 max-w-2xl mx-auto ">
             Custom 3D-Printed Creations for Businesses, Gifts, and Special Projects — Designed with Precision, Creativity, and Kid-Entrepreneur Passion
           </p>
 
@@ -110,21 +117,23 @@ export default function Home() {
       <section className="w-full py-24 px-6 relative">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left: Video Placeholder */}
-          <div className="relative w-full aspect-video bg-black/10 rounded-xl overflow-hidden shadow-2xl border-4 border-white flex items-center justify-center group cursor-pointer">
-            {/* Simulated Thumbnail */}
-            <div className="absolute inset-0 bg-gray-300">
-              <Image
-                src="/secondsec.png" // Using existing image as placeholder thumbnail
-                alt="Video Thumbnail"
-                fill
-                className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
+          {/* Left: Video Player */}
+          <div className="relative w-full aspect-video bg-black/10 rounded-xl overflow-hidden shadow-2xl border-4 border-white">
+            <video
+              src="/my.mp4"
+              className="w-full h-full object-cover"
+              controls
+              playsInline
+            >
+              Your browser does not support the video tag.
+            </video>
 
-            {/* Play Button Overlay */}
-            <div className="relative z-10 w-20 h-20 bg-white/80 rounded-full flex items-center justify-center pl-2 group-hover:scale-110 transition-transform duration-300">
-              <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[20px] border-l-[#A8C8C6] border-b-[10px] border-b-transparent ml-1"></div>
-            </div>
+
+            <p className="text-[10px] text-gray-600 uppercase ">
+              Parents are involved in every step to help with payments, timelines and communication.
+            </p>
+
+
           </div>
 
           {/* Right: Content */}
@@ -164,18 +173,14 @@ export default function Home() {
             </div>
 
             <div className="mt-12">
-              <Button text="Contact me Now" color="#F3D576" className="px-8 py-3 text-lg" />
+              <Link href="/contact">
+                <Button text="Contact me Now" color="#F3D576" className="px-8 py-3 text-lg" />
+              </Link>
             </div>
           </div>
         </div>
         {/* Caption below video roughly positioned or part of grid? Design image showed it below video. */}
-        <div className="max-w-6xl mx-auto mt-4 md:mt-0 relative pointer-events-none">
-          <div className="md:absolute md:bottom-[-40px] md:left-0 md:w-1/2 text-center md:text-left px-4">
-            <p className="text-[10px] text-gray-600 uppercase tracking-widest opacity-60">
-              Parents are involved in every step to help with payments, timelines and communication.
-            </p>
-          </div>
-        </div>
+
       </section>
 
       {/* Why People Love Working With Tissac Section */}
@@ -239,18 +244,12 @@ export default function Home() {
 
           {/* Right: Image/Video */}
           <div className="relative w-full aspect-square md:aspect-[4/5] bg-black/5 rounded-2xl overflow-hidden shadow-2xl border-[6px] border-[#A8C8C6] group order-1 md:order-2">
-            {/* Placeholder for Printer Image */}
-            <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-              <span className="text-gray-400 font-heading text-2xl p-8 text-center">
-                [3D Printer / Project Image]
-              </span>
-            </div>
-
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="w-24 h-24 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center pl-2 border border-white/50">
-                <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[24px] border-l-white border-b-[12px] border-b-transparent ml-2"></div>
-              </div>
-            </div>
+            <Image
+              src="/whytissac.png"
+              alt="Printer"
+              fill
+              className="object-contain"
+            />
           </div>
         </div>
       </section>
@@ -283,11 +282,13 @@ export default function Home() {
               Tell us a little about your project and we&apos;ll get back to you with ideas, pricing and timing. All projects are managed with parent supervision for safety, payment and scheduling.
             </p>
 
-            <Button
-              text="Contact me Now"
-              color="#C6E2DE"
-              className="px-8 py-3 text-xl border-[1.5px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
-            />
+            <Link href="/contact">
+              <Button
+                text="Contact me Now"
+                color="#C6E2DE"
+                className="px-8 py-3 text-xl border-[1.5px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+              />
+            </Link>
           </div>
         </div>
       </section>

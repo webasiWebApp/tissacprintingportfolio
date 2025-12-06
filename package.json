@@ -16,8 +16,7 @@
     "nodemailer": "^7.0.11",
     "react": "19.2.0",
     "react-dom": "19.2.0",
-    "react-grid-gallery": "^1.0.1",
-    "react-image-gallery": "^1.4.0",
+    "react-photo-album": "^3.3.0",
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
