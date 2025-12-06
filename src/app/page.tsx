@@ -4,15 +4,25 @@ import Image from "next/image";
 import Button from "@/components/Button";
 import Carousel from "@/components/Carousel";
 import Link from "next/link";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Home() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
+
   return (
     <main className="min-h-screen  relative overflow-hidden flex flex-col items-center justify-center text-center px-4 pt-20 pb-20">
 
 
 
       {/* Content Container */}
-      <div className="relative z-10 flex flex-col items-center max-w-3xl mx-auto mt-12">
+      <div className="relative z-10 flex flex-col items-center max-w-3xl mx-auto mt-12" data-aos="fade-up">
         {/* Logo Image */}
         <div className="relative w-64 h-64 md:w-80 md:h-80 mb-6">
           <Image
@@ -55,7 +65,7 @@ export default function Home() {
       </div>
 
       {/* About Section */}
-      <section className="w-full max-w-6xl mx-auto mt-24 py-6 md:py-20 px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-left">
+      <section className="w-full max-w-6xl mx-auto mt-24 py-6 md:py-20 px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-left" data-aos="fade-up">
         {/* Left: Image */}
         <div className="relative w-full aspect-[4/5] md:aspect-square">
           <Image
@@ -95,7 +105,7 @@ export default function Home() {
       </section>
 
       {/* Services Carousel Section */}
-      <section className="w-full relative mt-32 pb-24">
+      <section className="w-full relative mt-32 pb-24" data-aos="fade-up">
         {/* Background Curve (Teal inverted or similar) */}
         <div className="absolute top-0 right-0 w-full h-[120%] z-0 pointer-events-none overflow-hidden">
           <div className="absolute top-[20%] right-[-10%] w-[80%] h-[100%]  z-0"></div>
@@ -114,7 +124,7 @@ export default function Home() {
       </section>
 
       {/* How It Works Section */}
-      <section className="w-full py-24 px-6 relative">
+      <section className="w-full py-24 px-6 relative" data-aos="fade-up">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left: Video Placeholder */}
           {/* Left: Video Player */}
@@ -184,7 +194,7 @@ export default function Home() {
       </section>
 
       {/* Why People Love Working With Tissac Section */}
-      <section className="w-full py-24 px-6 relative  overflow-hidden">
+      <section className="w-full py-24 px-6 relative  overflow-hidden" data-aos="fade-up">
 
 
         <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -255,7 +265,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full py-24 px-4  flex justify-center items-center">
+      <section className="w-full py-24 px-4  flex justify-center items-center" data-aos="fade-up">
         <div className="w-full max-w-5xl bg-white rounded-[3rem] border-2 border-black p-8 md:p-12 flex flex-col md:flex-row items-center gap-12 relative shadow-2xl overflow-hidden">
           {/* Left: Logo */}
           <div className="relative w-full md:w-1/3 flex justify-center">

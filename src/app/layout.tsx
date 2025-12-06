@@ -20,6 +20,9 @@ const raleway = Raleway({
 export const metadata: Metadata = {
   title: "Tissac Terrif Printing",
   description: "Tissac Terrif Printing is a 10-year-old entrepreneur with a passion for turning imagination into reality.",
+  icons: {
+    icon: "/logo.ico",
+  },
 };
 
 export default function RootLayout({
